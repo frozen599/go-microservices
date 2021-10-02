@@ -1,4 +1,4 @@
-# This project serves as my microservices learning path
+## This project serves as my microservices learning path
 
 
-## How to run
+### How to run
