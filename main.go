@@ -9,18 +9,15 @@ import (
 func main() {
 	router := gin.Default()
 
-	router.GET("/", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{
-			"message": "hello, world",
-		})
-	})
+	router.GET("/:name", Index)
 
-	router.Run(":5000")
+	router.Run()
 }
 
 // Custom index handler
 func Index(c *gin.Context) {
+	name := c.Params.ByName("name")
 	c.JSON(http.StatusOK, gin.H{
-		"message": "hello world",
+		"message": "hello " + name,
 	})
 }
